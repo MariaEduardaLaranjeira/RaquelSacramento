@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raquel Sacramento – Gabinete de Estética | Maia, Porto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --warm-nude: #E8D5C4;
+    --blush: #D4A5A0;
+    --rose: #C47C78;
+    --deep-rose: #8B4A47;
+    --charcoal: #2C2420;
+    --warm-gray: #6B5E59;
+    --light-gray: #F0EBE5;
+    --white: #FFFFFF;
+    --gold: #B8956A;
+    --gold-light: #D4B896;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Jost', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--charcoal);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─────────────────────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.25rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(250,247,242,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--warm-nude);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--charcoal);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-logo span {
+    color: var(--rose);
+    font-style: italic;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    transition: color 0.3s;
+    font-weight: 400;
+  }
+
+  .nav-links a:hover { color: var(--rose); }
+
+  .nav-cta {
+    background: var(--rose);
+    color: var(--white) !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 0;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.2em !important;
+    transition: background 0.3s !important;
+  }
+
+  .nav-cta:hover { background: var(--deep-rose) !important; color: var(--white) !important; }
+
+  /* ─── HERO ─────────────────────────────────────────────── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem 6rem 6rem;
+    position: relative;
+  }
+
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 20% 80%, rgba(196,124,120,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 0.5px;
+    background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--rose);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 0.9rem;
+    color: var(--warm-gray);
+    max-width: 380px;
+    line-height: 1.85;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--rose);
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 2.2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    font-weight: 400;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover { background: var(--deep-rose); transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    border: 0.5px solid var(--warm-gray);
+    color: var(--warm-gray);
+    text-decoration: none;
+    padding: 1rem 2.2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    font-weight: 400;
+    transition: all 0.3s;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--rose);
+    color: var(--rose);
+  }
+
+  .hero-right {
+    position: relative;
+    background: var(--warm-nude);
+    overflow: hidden;
+  }
+
+  .hero-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #E8D5C4 0%, #D4A5A0 50%, #C47C78 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.7);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-img-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 0.5rem;
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 300;
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 3rem;
+    left: -2rem;
+    background: var(--white);
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 8px 32px rgba(44,36,32,0.12);
+    min-width: 180px;
+  }
+
+  .hero-badge-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+    font-weight: 400;
+  }
+
+  .hero-badge-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--charcoal);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  /* ─── SECTION BASE ─────────────────────────────────────── */
+  section { padding: 6rem 6rem; }
+
+  .section-eyebrow {
+    font-size: 0.63rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 0.5px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  /* ─── DESTAQUES STRIP ──────────────────────────────────── */
+  #destaques {
+    background: var(--charcoal);
+    padding: 3rem 6rem;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .destaque-item {
+    text-align: center;
+    color: var(--white);
+  }
+
+  .destaque-number {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .destaque-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+  }
+
+  .destaque-divider {
+    width: 0.5px;
+    height: 3rem;
+    background: rgba(255,255,255,0.15);
+  }
+
+  /* ─── SOBRE ────────────────────────────────────────────── */
+  #sobre {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .sobre-img {
+    aspect-ratio: 3/4;
+    background: linear-gradient(160deg, #E8D5C4 0%, #C47C78 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.6);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .sobre-img-tag {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-weight: 300;
+  }
+
+  .sobre-text p {
+    color: var(--warm-gray);
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+    line-height: 1.9;
+  }
+
+  .sobre-signature {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--rose);
+    margin-top: 2rem;
+  }
+
+  /* ─── SERVIÇOS ─────────────────────────────────────────── */
+  #servicos {
+    background: var(--cream);
+  }
+
+  .servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 3rem;
+    border: 0.5px solid var(--warm-nude);
+  }
+
+  .servico-card {
+    padding: 2.5rem 2rem;
+    border-right: 0.5px solid var(--warm-nude);
+    border-bottom: 0.5px solid var(--warm-nude);
+    transition: background 0.3s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .servico-card:hover { background: var(--white); }
+
+  .servico-card:hover .servico-num { color: var(--rose); }
+
+  .servico-num {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--warm-nude);
+    line-height: 1;
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+  }
+
+  .servico-name {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 0.75rem;
+  }
+
+  .servico-desc {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .servico-arrow {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    border: 0.5px solid var(--warm-nude);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: var(--rose);
+  }
+
+  /* ─── FOTOS DO ESPAÇO ──────────────────────────────────── */
+  #fotos {
+    background: var(--charcoal);
+    padding: 5rem 6rem;
+  }
+
+  #fotos .section-title { color: var(--white); }
+  #fotos .section-eyebrow { color: var(--gold-light); }
+  #fotos .section-eyebrow::before { background: var(--gold-light); }
+
+  .fotos-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .foto-item {
+    background: var(--warm-nude);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.4rem;
+    color: rgba(44,36,32,0.5);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .foto-item-label {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    font-weight: 300;
+  }
+
+  .foto-main { grid-row: span 2; min-height: 420px; background: linear-gradient(160deg, #D4A5A0, #8B4A47); color: rgba(255,255,255,0.6); }
+  .foto-sm { min-height: 200px; background: linear-gradient(135deg, #E8D5C4, #C47C78); }
+
+  /* ─── CATÁLOGO ─────────────────────────────────────────── */
+  #catalogo {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .catalogo-left .section-title { margin-bottom: 0.75rem; }
+
+  .catalogo-intro {
+    color: var(--warm-gray);
+    font-size: 0.88rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    line-height: 1.9;
+  }
+
+  .pagamento-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .pagamento-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--cream);
+    border: 0.5px solid var(--warm-nude);
+    padding: 0.7rem 1.2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    font-weight: 400;
+  }
+
+  .pagamento-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    background: var(--rose);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .catalogo-items {
+    margin-top: 1rem;
+  }
+
+  .catalogo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1.25rem 0;
+    border-bottom: 0.5px solid var(--light-gray);
+  }
+
+  .catalogo-item:last-child { border-bottom: none; }
+
+  .cat-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--charcoal);
+  }
+
+  .cat-sub {
+    font-size: 0.72rem;
+    color: var(--warm-gray);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-top: 0.15rem;
+  }
+
+  .cat-price {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--rose);
+    font-weight: 300;
+    font-style: italic;
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
+
+  /* ─── HORÁRIO ──────────────────────────────────────────── */
+  #horario {
+    background: var(--light-gray);
+    padding: 5rem 6rem;
+  }
+
+  .horario-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .horario-card {
+    background: var(--white);
+    padding: 2rem;
+    border-left: 3px solid var(--rose);
+  }
+
+  .horario-day {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .horario-hours {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--charcoal);
+  }
+
+  /* ─── TESTEMUNHOS ──────────────────────────────────────── */
+  #testemunho {
+    background: var(--cream);
+    padding: 6rem 6rem;
+  }
+
+  .testemunho-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .testemunho-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    position: relative;
+    border: 0.5px solid var(--warm-nude);
+  }
+
+  .testemunho-stars {
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.25rem;
+  }
+
+  .testemunho-text {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--charcoal);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  .testemunho-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .testemunho-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--warm-nude);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--rose);
+    font-style: italic;
+    flex-shrink: 0;
+  }
+
+  .testemunho-name {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: 0.06em;
+  }
+
+  .testemunho-role {
+    font-size: 0.68rem;
+    color: var(--warm-gray);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .testemunho-quote-mark {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-family: var(--font-display);
+    font-size: 5rem;
+    color: var(--warm-nude);
+    line-height: 1;
+    font-style: italic;
+    font-weight: 300;
+    pointer-events: none;
+  }
+
+  /* ─── LOCALIZAÇÃO ──────────────────────────────────────── */
+  #localizacao {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .localizacao-info {
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .localizacao-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .loc-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--cream);
+    border: 0.5px solid var(--warm-nude);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: var(--rose);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .loc-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+  }
+
+  .loc-value {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--charcoal);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .loc-value a {
+    color: var(--rose);
+    text-decoration: none;
+  }
+
+  .map-placeholder {
+    background: linear-gradient(160deg, #E8D5C4 0%, #D4A5A0 100%);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: relative;
+  }
+
+  .map-pin {
+    width: 3rem;
+    height: 3rem;
+    background: var(--rose);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    margin-bottom: 0.5rem;
+  }
+
+  .map-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(44,36,32,0.5);
+    font-weight: 400;
+    font-family: var(--font-body);
+  }
+
+  .map-address {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: rgba(44,36,32,0.6);
+    font-style: italic;
+    text-align: center;
+    padding: 0 2rem;
+    line-height: 1.5;
+  }
+
+  .map-btn {
+    margin-top: 1rem;
+    background: var(--rose);
+    color: var(--white);
+    padding: 0.75rem 1.75rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    font-weight: 400;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: inline-block;
+  }
+
+  .map-btn:hover { background: var(--deep-rose); }
+
+  /* ─── CONTACTO ─────────────────────────────────────────── */
+  #contacto {
+    background: var(--charcoal);
+    padding: 6rem 6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  #contacto .section-title { color: var(--white); }
+  #contacto .section-eyebrow { color: var(--gold-light); }
+  #contacto .section-eyebrow::before { background: var(--gold-light); }
+
+  .contacto-intro {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.88rem;
+    font-weight: 300;
+    line-height: 1.9;
+    margin-bottom: 2.5rem;
+  }
+
+  .contacto-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #25D366;
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: opacity 0.3s;
+    margin-bottom: 1rem;
+    display: block;
+    width: fit-content;
+  }
+
+  .contacto-whatsapp:hover { opacity: 0.9; }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 0.5px solid rgba(255,255,255,0.15);
+    color: var(--white);
+    padding: 0.9rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+  }
+
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--rose);
+  }
+
+  .form-input::placeholder, .form-textarea::placeholder {
+    color: rgba(255,255,255,0.25);
+  }
+
+  .form-select option { background: var(--charcoal); color: var(--white); }
+
+  .form-textarea { resize: vertical; min-height: 120px; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--rose);
+    color: var(--white);
+    border: none;
+    padding: 1.1rem;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 400;
+    cursor: pointer;
+    margin-top: 0.75rem;
+    transition: background 0.3s;
+  }
+
+  .form-submit:hover { background: var(--deep-rose); }
+
+  /* ─── SOCIAL ───────────────────────────────────────────── */
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border: 0.5px solid rgba(255,255,255,0.15);
+    padding: 0.6rem 1rem;
+    transition: all 0.3s;
+  }
+
+  .social-link:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
+
+  /* ─── RODAPÉ ───────────────────────────────────────────── */
+  footer {
+    background: #1A1210;
+    padding: 3rem 6rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-logo em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .footer-legal {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.25);
+    line-height: 1.9;
+    font-weight: 300;
+    max-width: 440px;
+  }
+
+  .footer-legal a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-legal a:hover { color: var(--rose); }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-links a {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--rose); }
+
+  .footer-bottom {
+    width: 100%;
+    border-top: 0.5px solid rgba(255,255,255,0.08);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .footer-copy {
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.1em;
+    font-weight: 300;
+  }
+
+  .footer-legal-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-legal-links a {
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.25);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .footer-legal-links a:hover { color: var(--rose); }
+
+  /* ─── CTA FLUTUANTE WHATSAPP ──────────────────────────── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 200;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform 0.3s;
+  }
+
+  .whatsapp-float:hover { transform: scale(1.08); }
+
+  .whatsapp-float svg { width: 1.6rem; height: 1.6rem; fill: white; }
+
+  /* ─── UTILITÁRIOS ──────────────────────────────────────── */
+  .divider {
+    width: 3rem;
+    height: 0.5px;
+    background: var(--warm-nude);
+    margin: 2rem 0;
+  }
+
+  .text-center { text-align: center; }
+
+  .mt-4 { margin-top: 2rem; }
+
+  .tag-pill {
+    display: inline-block;
+    background: var(--cream);
+    border: 0.5px solid var(--warm-nude);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    padding: 0.35rem 0.85rem;
+    font-weight: 400;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.8s ease 0.2s both; }
+  .hero-title { animation: fadeUp 0.8s ease 0.4s both; }
+  .hero-sub { animation: fadeUp 0.8s ease 0.6s both; }
+  .hero-actions { animation: fadeUp 0.8s ease 0.8s both; }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ──────────────────────────────────────────────── -->
+<nav>
+  <a href="#hero" class="nav-logo">Raquel <span>Sacramento</span></a>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#catalogo">Catálogo</a></li>
+    <li><a href="#fotos">Espaço</a></li>
+    <li><a href="#testemunho">Testemunhos</a></li>
+    <li><a href="#localizacao">Localização</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contacto" class="nav-cta">Marcação</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Gabinete de Estética · Maia, Porto</p>
+    <h1 class="hero-title">
+      Arte nas<br>
+      <em>mãos que</em><br>
+      te cuidam.
+    </h1>
+    <p class="hero-sub">Manicure, pedicure e unhas de gel com uma abordagem personalizada, num espaço pensado para o teu conforto e bem-estar. Localizado na Rua da Estação, na Maia.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/351912731115?text=Olá%20Raquel!%20Gostaria%20de%20fazer%20uma%20marcação." class="btn-primary" target="_blank">
+        ✦ Marcar no WhatsApp
+      </a>
+      <a href="#servicos" class="btn-outline">Ver Serviços</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-placeholder">
+      Foto do Espaço / Serviço
+      <span class="hero-img-label">Inserir imagem principal</span>
+    </div>
+    <div class="hero-badge">
+      <p class="hero-badge-label">Contacto direto</p>
+      <p class="hero-badge-value">912 731 115</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DESTAQUES ─────────────────────────────────────────── -->
+<div id="destaques">
+  <div class="destaque-item">
+    <p class="destaque-number">+500</p>
+    <p class="destaque-label">Clientes satisfeitas</p>
+  </div>
+  <div class="destaque-divider"></div>
+  <div class="destaque-item">
+    <p class="destaque-number">3</p>
+    <p class="destaque-label">Serviços especializados</p>
+  </div>
+  <div class="destaque-divider"></div>
+  <div class="destaque-item">
+    <p class="destaque-number">5★</p>
+    <p class="destaque-label">Avaliação média</p>
+  </div>
+  <div class="destaque-divider"></div>
+  <div class="destaque-item">
+    <p class="destaque-number">6 dias</p>
+    <p class="destaque-label">Por semana disponível</p>
+  </div>
+</div>
+
+<!-- ─── SOBRE ─────────────────────────────────────────────── -->
+<section id="sobre">
+  <div class="sobre-img">
+    Foto da Raquel
+    <span class="sobre-img-tag">Inserir foto profissional</span>
+  </div>
+  <div class="sobre-text">
+    <p class="section-eyebrow">Sobre mim</p>
+    <h2 class="section-title">Dedicada à <em>beleza</em><br>que te faz sentir bem.</h2>
+    <p>Sou a Raquel Sacramento, especialista em estética com anos de experiência e uma paixão genuína pelo cuidado das mãos e pés. O meu gabinete nasceu da vontade de criar um espaço íntimo e acolhedor, onde cada cliente se sinta única.</p>
+    <p>Utilizo produtos de qualidade superior e técnicas atualizadas para garantir resultados duradouros. Seja em manicure, pedicure ou unhas de gel, o meu compromisso é sempre a excelência e o teu conforto.</p>
+    <div class="divider"></div>
+    <div>
+      <span class="tag-pill">Manicure & Pedicure</span>
+      <span class="tag-pill">Unhas de Gel</span>
+      <span class="tag-pill">Verniz Gel</span>
+      <span class="tag-pill">Maia · Porto</span>
+    </div>
+    <p class="sobre-signature">Raquel Sacramento</p>
+  </div>
+</section>
+
+<!-- ─── SERVIÇOS ──────────────────────────────────────────── -->
+<section id="servicos">
+  <p class="section-eyebrow">O que faço</p>
+  <h2 class="section-title">Serviços <em>especializados</em></h2>
+  <div class="servicos-grid">
+    <div class="servico-card">
+      <p class="servico-num">01</p>
+      <h3 class="servico-name">Manicure & Pedicure</h3>
+      <p class="servico-desc">Tratamento completo das mãos e pés com remoção de cutículas, lixagem, hidratação e aplicação de verniz. Um ritual de cuidado que mereces.</p>
+      <div class="servico-arrow">→</div>
+    </div>
+    <div class="servico-card">
+      <p class="servico-num">02</p>
+      <h3 class="servico-name">Unhas de Gel</h3>
+      <p class="servico-desc">Construção e alongamento em gel com acabamento natural ou criativo. Durabilidade e beleza que duram semanas, com um resultado impecável.</p>
+      <div class="servico-arrow">→</div>
+    </div>
+    <div class="servico-card">
+      <p class="servico-num">03</p>
+      <h3 class="servico-name">Verniz Gel</h3>
+      <p class="servico-desc">Cor intensa e duradoura com secagem imediata. Aplicação perfeita com uma ampla gama de cores para expressares a tua personalidade.</p>
+      <div class="servico-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOTOS DO ESPAÇO ────────────────────────────────────── -->
+<section id="fotos">
+  <p class="section-eyebrow">O nosso espaço</p>
+  <h2 class="section-title">Um ambiente <em>pensado para ti</em></h2>
+  <div class="fotos-grid">
+    <div class="foto-item foto-main">
+      Foto Principal do Espaço
+      <span class="foto-item-label">Imagem principal – interior</span>
+    </div>
+    <div class="foto-item foto-sm">
+      Foto 2
+      <span class="foto-item-label">Detalhe serviço</span>
+    </div>
+    <div class="foto-item foto-sm">
+      Foto 3
+      <span class="foto-item-label">Produtos utilizados</span>
+    </div>
+    <div class="foto-item foto-sm">
+      Foto 4
+      <span class="foto-item-label">Manicure em detalhe</span>
+    </div>
+    <div class="foto-item foto-sm">
+      Foto 5
+      <span class="foto-item-label">Ambiente do gabinete</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CATÁLOGO ──────────────────────────────────────────── -->
+<section id="catalogo">
+  <div class="catalogo-left">
+    <p class="section-eyebrow">Catálogo de preços</p>
+    <h2 class="section-title">Transparência <em>em tudo</em></h2>
+    <p class="catalogo-intro">Todos os preços são apresentados com IVA incluído. Consulta os nossos tratamentos e escolhe o que mais se adequa a ti. Para orçamentos personalizados, contacta-nos diretamente.</p>
+
+    <p class="section-eyebrow" style="margin-top: 2rem;">Métodos de pagamento</p>
+    <div class="pagamento-list">
+      <div class="pagamento-badge">
+        <div class="pagamento-icon"></div>
+        MBWay
+      </div>
+      <div class="pagamento-badge">
+        <div class="pagamento-icon" style="border-radius:3px;"></div>
+        Multibanco
+      </div>
+      <div class="pagamento-badge">
+        <div class="pagamento-icon" style="background: var(--gold); border-radius: 2px;"></div>
+        Numerário
+      </div>
+    </div>
+  </div>
+
+  <div class="catalogo-items">
+    <div class="catalogo-item">
+      <div>
+        <p class="cat-name">Manicure Simples</p>
+        <span class="cat-sub">Corte, lima, cutículas e verniz normal</span>
+      </div>
+      <p class="cat-price">Consultar</p>
+    </div>
+    <div class="catalogo-item">
+      <div>
+        <p class="cat-name">Manicure com Verniz Gel</p>
+        <span class="cat-sub">Manicure completo + verniz semipermanente</span>
+      </div>
+      <p class="cat-price">Consultar</p>
+    </div>
+    <div class="catalogo-item">
+      <div>
+        <p class="cat-name">Pedicure Simples</p>
+        <span class="cat-sub">Corte, lima, cutículas e verniz normal</span>
+      </div>
+      <p class="cat-price">Consultar</p>
+    </div>
+    <div class="catalogo-item">
+      <div>
+        <p class="cat-name">Pedicure com Verniz Gel</p>
+        <span class="cat-sub">Pedicure completo + verniz semipermanente</span>
+      </div>
+      <p class="cat-price">Consultar</p>
+    </div>
+    <div class="catalogo-item">
+      <div>
+        <p class="cat-name">Unhas de Gel – Colocação</p>
+        <span class="cat-sub">Construção completa com gel</span>
+      </div>
+      <p class="cat-price">Consultar</p>
+    </div>
+    <div class="catalogo-item">
+      <div>
+        <p class="cat-name">Unhas de Gel – Manutenção</p>
+        <span class="cat-sub">Retoque e manutenção das unhas</span>
+      </div>
+      <p class="cat-price">Consultar</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HORÁRIO ───────────────────────────────────────────── -->
+<section id="horario">
+  <p class="section-eyebrow">Disponibilidade</p>
+  <h2 class="section-title">Horário <em>de atendimento</em></h2>
+  <div class="horario-grid">
+    <div class="horario-card">
+      <p class="horario-day">Segunda a Sexta</p>
+      <p class="horario-hours">09:00 – 19:00</p>
+    </div>
+    <div class="horario-card">
+      <p class="horario-day">Sábado</p>
+      <p class="horario-hours">09:00 – 17:00</p>
+    </div>
+    <div class="horario-card" style="border-left-color: var(--warm-nude);">
+      <p class="horario-day">Domingo</p>
+      <p class="horario-hours" style="color: var(--warm-gray); font-size:1.2rem;">Encerrado</p>
+    </div>
+  </div>
+  <p style="margin-top: 2rem; font-size: 0.78rem; color: var(--warm-gray); font-weight: 300;">
+    ✦ &nbsp;Marcações exclusivamente via WhatsApp ou telefone. Horário sujeito a alteração em feriados.
+  </p>
+</section>
+
+<!-- ─── TESTEMUNHOS ───────────────────────────────────────── -->
+<section id="testemunho">
+  <p class="section-eyebrow">O que dizem de nós</p>
+  <h2 class="section-title">Testemunhos <em>reais</em></h2>
+  <div class="testemunho-grid">
+    <div class="testemunho-card">
+      <div class="testemunho-quote-mark">"</div>
+      <p class="testemunho-stars">★★★★★</p>
+      <p class="testemunho-text">A Raquel é simplesmente incrível! As minhas unhas nunca ficaram tão bonitas e o atendimento é sempre muito cuidado e atencioso. Recomendo a toda a gente!</p>
+      <div class="testemunho-author">
+        <div class="testemunho-avatar">A</div>
+        <div>
+          <p class="testemunho-name">Ana Ferreira</p>
+          <p class="testemunho-role">Cliente habitual · Maia</p>
+        </div>
+      </div>
+    </div>
+    <div class="testemunho-card">
+      <div class="testemunho-quote-mark">"</div>
+      <p class="testemunho-stars">★★★★★</p>
+      <p class="testemunho-text">Adorei o espaço e a qualidade do serviço! As unhas de gel ficaram perfeitas e duraram imenso tempo. Já agendei a próxima visita sem hesitar.</p>
+      <div class="testemunho-author">
+        <div class="testemunho-avatar">M</div>
+        <div>
+          <p class="testemunho-name">Margarida Costa</p>
+          <p class="testemunho-role">Cliente · Porto</p>
+        </div>
+      </div>
+    </div>
+    <div class="testemunho-card">
+      <div class="testemunho-quote-mark">"</div>
+      <p class="testemunho-stars">★★★★★</p>
+      <p class="testemunho-text">Ambiente super acolhedor e a Raquel é uma profissional de excelência. A pedicure foi relaxante e o resultado ficou maravilhoso. Voltarei sempre!</p>
+      <div class="testemunho-author">
+        <div class="testemunho-avatar">S</div>
+        <div>
+          <p class="testemunho-name">Sofia Lopes</p>
+          <p class="testemunho-role">Cliente · Matosinhos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LOCALIZAÇÃO ───────────────────────────────────────── -->
+<section id="localizacao" style="padding:0;">
+  <div class="localizacao-info">
+    <p class="section-eyebrow">Onde estamos</p>
+    <h2 class="section-title">Fácil de <em>encontrar</em></h2>
+
+    <div class="localizacao-detail">
+      <div class="loc-icon">📍</div>
+      <div>
+        <p class="loc-label">Morada</p>
+        <p class="loc-value">R. da Estação 47<br>4475-631 Maia, Porto</p>
+      </div>
+    </div>
+
+    <div class="localizacao-detail">
+      <div class="loc-icon">📞</div>
+      <div>
+        <p class="loc-label">Telefone</p>
+        <p class="loc-value"><a href="tel:+351912731115">912 731 115</a></p>
+      </div>
+    </div>
+
+    <div class="localizacao-detail">
+      <div class="loc-icon">📱</div>
+      <div>
+        <p class="loc-label">WhatsApp · Marcações</p>
+        <p class="loc-value"><a href="https://wa.me/351912731115" target="_blank">912 731 115</a></p>
+      </div>
+    </div>
+
+    <div class="localizacao-detail">
+      <div class="loc-icon">📷</div>
+      <div>
+        <p class="loc-label">Instagram</p>
+        <p class="loc-value"><a href="https://instagram.com/raquelsacramento_estetica" target="_blank">@raquelsacramento_estetica</a></p>
+      </div>
+    </div>
+
+    <div class="localizacao-detail">
+      <div class="loc-icon">👍</div>
+      <div>
+        <p class="loc-label">Facebook</p>
+        <p class="loc-value"><a href="https://facebook.com/raquelsacramento" target="_blank">@raquelsacramento</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-placeholder">
+    <div class="map-pin"></div>
+    <p class="map-label">Google Maps · Ver localização</p>
+    <p class="map-address">R. da Estação 47<br>4475-631 Maia</p>
+    <a href="https://maps.google.com/?q=R.+da+Estação+47,+4475-631+Maia" target="_blank" class="map-btn">
+      Abrir no Google Maps →
+    </a>
+  </div>
+</section>
+
+<!-- ─── CONTACTO ──────────────────────────────────────────── -->
+<section id="contacto">
+  <div>
+    <p class="section-eyebrow">Vamos conversar</p>
+    <h2 class="section-title">Faz a tua <em>marcação</em></h2>
+    <p class="contacto-intro">Estou disponível para te receber e tornar cada visita numa experiência única. Envia uma mensagem direta ou preenche o formulário de contacto.</p>
+
+    <a href="https://wa.me/351912731115?text=Olá%20Raquel!%20Quero%20marcar%20uma%20consulta." class="contacto-whatsapp" target="_blank">
+      ↗ Marcar via WhatsApp – 912 731 115
+    </a>
+
+    <p style="font-size:0.7rem; color:rgba(255,255,255,0.3); margin-top:1.5rem; margin-bottom:0.5rem; letter-spacing:0.1em; text-transform:uppercase;">Redes Sociais</p>
+    <div class="social-links">
+      <a href="https://instagram.com/raquelsacramento_estetica" target="_blank" class="social-link">
+        IG · @raquelsacramento_estetica
+      </a>
+      <a href="https://facebook.com/raquelsacramento" target="_blank" class="social-link">
+        FB · @raquelsacramento
+      </a>
+    </div>
+  </div>
+
+  <form onsubmit="return false;">
+    <div class="form-group">
+      <label class="form-label">Nome completo</label>
+      <input type="text" class="form-input" placeholder="O teu nome">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Contacto (telefone ou e-mail)</label>
+      <input type="text" class="form-input" placeholder="Telefone ou e-mail">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Serviço pretendido</label>
+      <select class="form-select">
+        <option value="">Seleciona um serviço</option>
+        <option>Manicure</option>
+        <option>Pedicure</option>
+        <option>Unhas de Gel – Colocação</option>
+        <option>Unhas de Gel – Manutenção</option>
+        <option>Verniz Gel</option>
+        <option>Outro / Dúvida</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Mensagem (opcional)</label>
+      <textarea class="form-textarea" placeholder="Diz-me quando estás disponível ou o que precisas…"></textarea>
+    </div>
+    <button type="submit" class="form-submit">Enviar Pedido de Marcação</button>
+    <p style="font-size:0.62rem; color:rgba(255,255,255,0.2); margin-top:1rem; line-height:1.7; font-weight:300;">
+      Ao submeter este formulário concordas com o tratamento dos teus dados pessoais de acordo com a nossa <a href="#" style="color:rgba(255,255,255,0.35); text-decoration:underline;">Política de Privacidade</a>, nos termos do RGPD (Regulamento Geral sobre a Proteção de Dados – Reg. (UE) 2016/679).
+    </p>
+  </form>
+</section>
+
+<!-- ─── RODAPÉ ─────────────────────────────────────────────── -->
+<footer>
+  <div>
+    <p class="footer-logo">Raquel <em>Sacramento</em></p>
+    <p style="font-size:0.62rem; color:rgba(255,255,255,0.2); margin-top:0.5rem; letter-spacing:0.08em;">Gabinete de Estética · Maia, Porto</p>
+  </div>
+
+  <div class="footer-legal">
+    <p><strong style="color:rgba(255,255,255,0.35); font-weight:400;">Raquel Sacramento – Gabinete de Estética</strong><br>
+    R. da Estação 47, 4475-631 Maia · NIF: [inserir NIF]<br>
+    Atividade registada ao abrigo do Decreto-Lei n.º 115/2019 e legislação aplicável ao setor da estética em Portugal.<br>
+    Todos os preços indicados incluem IVA à taxa em vigor (23%). Consulte as nossas condições de marcação e cancelamento.</p>
+  </div>
+
+  <ul class="footer-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#catalogo">Catálogo</a></li>
+    <li><a href="#testemunho">Testemunhos</a></li>
+    <li><a href="#localizacao">Localização</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#">Política de Privacidade</a></li>
+    <li><a href="#">Resolução de Litígios</a></li>
+  </ul>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 Raquel Sacramento – Gabinete de Estética. Todos os direitos reservados.</p>
+    <div class="footer-legal-links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos e Condições</a>
+      <a href="#">RGPD</a>
+      <a href="https://www.livroreclamacoes.pt" target="_blank">Livro de Reclamações</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── WHATSAPP FLUTUANTE ────────────────────────────────── -->
+<a href="https://wa.me/351912731115?text=Olá%20Raquel!%20Gostaria%20de%20fazer%20uma%20marcação." class="whatsapp-float" target="_blank" title="Marcar via WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+</body>
+</html>
