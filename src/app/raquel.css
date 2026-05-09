@@ -73,6 +73,11 @@
 
 .rs-nav-links a:hover { color: var(--warm-gray); }
 
+.rs-nav-two-line {
+  line-height: 1.3;
+  text-align: center;
+}
+
 .rs-nav-cta {
   background: var(--warm-gray) !important;
   color: var(--white) !important;

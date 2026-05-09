@@ -30,9 +30,9 @@ function Nav() {
       <ul className={`rs-nav-links${open ? " open" : ""}`}>
         <li><a href="#sobre" onClick={close}>Sobre</a></li>
         <li><a href="#fotos" onClick={close}>Espaço</a></li>
-        <li><a href="#galeria-unhas" onClick={close}>Catálogo</a></li>
+        <li><a href="#galeria-unhas" onClick={close} className="rs-nav-two-line">Catálogo<br />unhas</a></li>
         <li><a href="#servicos" onClick={close}>Serviços</a></li>
-        <li><a href="#catalogo" onClick={close}>Preços</a></li>
+        <li><a href="#catalogo" onClick={close}>Catálogo</a></li>
         <li><a href="#horario" onClick={close}>Horário</a></li>
         <li><a href="#testemunho" onClick={close}>Testemunhos</a></li>
         <li><a href="#localizacao" onClick={close}>Localização</a></li>
@@ -267,7 +267,7 @@ function Catalogo() {
               <p className="rs-cat-name">{item.name}</p>
               <span className="rs-cat-sub">{item.sub}</span>
             </div>
-            <p className="rs-cat-price">{item.price}</p>
+            
           </div>
         ))}
       </div>
@@ -410,7 +410,7 @@ function Localizacao() {
       icon: <IconFacebook />,
       label: "Facebook",
       value: "@raquelsacramento",
-      href: "https://facebook.com/raquelsacramento",
+      href: "https://www.facebook.com/people/Raquel-Sacramento/100057512646058/",
     },
   ];
 
@@ -507,7 +507,7 @@ function Contacto() {
             IG · @raquelsacramento_estetica
           </a>
           <a
-            href="https://facebook.com/raquelsacramento"
+            href="https://www.facebook.com/people/Raquel-Sacramento/100057512646058/"
             target="_blank"
             rel="noreferrer"
             className="rs-social-link rs-social-link-taupe"
