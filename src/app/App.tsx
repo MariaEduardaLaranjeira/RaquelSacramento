@@ -641,16 +641,16 @@ function Footer() {
 function Ebook() {
   const ebooks = [
     {
-      title: "Cuidados Essenciais",
+      title: "Dicas e precauções",
       description: "Guia completo para manter as tuas unhas sempre saudáveis e bonitas.",
     },
     {
-      title: "Nail Art Inspirações",
-      description: "Descobre as últimas tendências em decoração e design de unhas.",
+      title: "Tipos de materiais e curiosidades",
+      description: "Descobre como funciona certos processos.",
     },
     {
-      title: "Manutenção em Casa",
-      description: "Dicas profissionais para cuidares das tuas unhas entre sessões.",
+      title: "Autoestima e conscientização",
+      description: "Compreende como o cuidado pessoal pode fortalecê-la.",
     },
   ];
 
