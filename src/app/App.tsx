@@ -16,6 +16,10 @@ import imgNail3 from "figma:asset/2925f1c0e0fdf5eb895f1d02c583814ae113e353.png";
 import imgNail4 from "figma:asset/b4047b1e403ef6ca4d9e3693467e9721732cab92.png";
 import imgNail5 from "figma:asset/b9b8af3233de6d248a7f5062043026b851b3801e.png";
 import imgNail6 from "figma:asset/499e4cc0ef67fdf936a585f00201b36b962ac658.png";
+// Ebook icons
+import ebookIcon1 from "../imports/c5f6ce2cc6cf3df8ebbf91bbd1ae68d1.jpg";
+import ebookIcon2 from "../imports/3aee8726fe9dc0a46117aa41aa095e86.jpg";
+import ebookIcon3 from "../imports/f9d4f54240538afbf0ab46af6f1b3645.jpg";
 
 // Nav
 function Nav() {
@@ -30,12 +34,11 @@ function Nav() {
       <ul className={`rs-nav-links${open ? " open" : ""}`}>
         <li><a href="#sobre" onClick={close}>Sobre</a></li>
         <li><a href="#fotos" onClick={close}>Espaço</a></li>
-        <li><a href="#galeria-unhas" onClick={close} className="rs-nav-two-line">Catálogo<br />unhas</a></li>
+        <li><a href="#galeria-unhas" onClick={close}>Unhas</a></li>
         <li><a href="#servicos" onClick={close}>Serviços</a></li>
         <li><a href="#catalogo" onClick={close}>Catálogo</a></li>
-        <li><a href="#horario" onClick={close}>Horário</a></li>
         <li><a href="#testemunho" onClick={close}>Testemunhos</a></li>
-        <li><a href="#localizacao" onClick={close}>Localização</a></li>
+        <li><a href="#localizacao" onClick={close}>Localização/Horário</a></li>
         <li><a href="#ebook" onClick={close}>Ebook</a></li>
         <li><a href="#contacto" className="rs-nav-cta" onClick={close}>Marcação</a></li>
       </ul>
@@ -218,7 +221,12 @@ function Servicos() {
       <h2 className="rs-section-title">Serviços <em>especializados</em></h2>
       <div className="rs-servicos-grid">
         {servicos.map((s) => (
-          <div key={s.num} className="rs-servico-card">Catálogo            <p className="rs-servico-num">{s.num}</p><h3 className="rs-servico-name">{s.name}</h3><p className="rs-servico-desc">{s.desc}</p><div className="rs-servico-arrow">→</div></div>
+          <div key={s.num} className="rs-servico-card">
+            <p className="rs-servico-num">{s.num}</p>
+            <h3 className="rs-servico-name">{s.name}</h3>
+            <p className="rs-servico-desc">{s.desc}</p>
+            <div className="rs-servico-arrow">→</div>
+          </div>
         ))}
       </div>
     </section>
@@ -321,7 +329,7 @@ function Testemunhos() {
   ];
 
   return (
-    <section id="testemunho" className="rs-testemunho">
+    <section id="testemunho" className="rs-testemunho bg-[#f0ebe5]">
       <p className="rs-section-eyebrow">O que dizem de nós</p>
       <h2 className="rs-section-title">Testemunhos <em>reais</em></h2>
       <div className="rs-testemunho-grid rs-testemunho-grid-2">
@@ -416,7 +424,7 @@ function Localizacao() {
 
   return (
     <section id="localizacao" className="rs-localizacao">
-      <div className="rs-localizacao-info">
+      <div className="rs-localizacao-info bg-[#faf7f2]">
         <p className="rs-section-eyebrow">Onde estamos</p>
         <h2 className="rs-section-title">Fácil de <em>encontrar</em></h2>
         {details.map((d) => (
@@ -442,9 +450,27 @@ function Localizacao() {
             </div>
           </div>
         ))}
+
+        <div className="rs-horario-section">
+          <p className="rs-section-eyebrow" style={{ marginTop: "3rem" }}>Horário de atendimento</p>
+          <div className="rs-horario-inline">
+            <div className="rs-horario-item">
+              <p className="rs-horario-day">Segunda a Sexta</p>
+              <p className="rs-horario-hours">09:30 – 19:00</p>
+            </div>
+            <div className="rs-horario-item">
+              <p className="rs-horario-day">Sábado</p>
+              <p className="rs-horario-hours">09:30 – 17:00</p>
+            </div>
+            <div className="rs-horario-item">
+              <p className="rs-horario-day">Domingo</p>
+              <p className="rs-horario-hours">Encerrado</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="rs-map-placeholder">
+      <div className="rs-map-placeholder bg-[#faf7f2]">
         <div className="rs-map-pin" />
         <p className="rs-map-label">Google Maps · Ver localização</p>
         <p className="rs-map-address">
@@ -493,7 +519,7 @@ function Contacto() {
           target="_blank"
           rel="noreferrer"
         >
-          ↗ Marcar via WhatsApp – 912 731 115
+          ↗ Marcar via WhatsApp
         </a>
 
         <p className="rs-social-title">Redes Sociais</p>
@@ -589,7 +615,7 @@ function Contacto() {
 // Footer
 function Footer() {
   return (
-    <footer className="rs-footer">
+    <footer className="rs-footer bg-[#f0ebe5]">
       <div>
         <p className="rs-footer-logo">Raquel <em>Sacramento</em></p>
         <p className="rs-footer-subtitle">Gabinete de Estética · Maia, Porto</p>
@@ -598,7 +624,7 @@ function Footer() {
       <div className="rs-footer-legal">
         <p>
           <strong>Raquel Sacramento – Gabinete de Estética</strong><br />
-          R. da Estação 47, 4475-631 Maia · NIF: [inserir NIF]<br />
+          R. da Estação 47, 4475-631 Maia<br />
           Atividade registada ao abrigo do Decreto-Lei n.º 115/2019 e legislação aplicável ao setor da estética em Portugal.<br />
           Todos os preços indicados incluem IVA à taxa em vigor (23%). Consulte as nossas condições de marcação e cancelamento.
         </p>
@@ -612,7 +638,6 @@ function Footer() {
           ["#localizacao", "Localização"],
           ["#contacto", "Contacto"],
           ["#", "Política de Privacidade"],
-          ["#", "Resolução de Litígios"],
         ].map(([href, label]) => (
           <li key={label}><a href={href}>{label}</a></li>
         ))}
@@ -643,14 +668,17 @@ function Ebook() {
     {
       title: "Dicas e precauções",
       description: "Guia completo para manter as tuas unhas sempre saudáveis e bonitas.",
+      icon: ebookIcon1,
     },
     {
       title: "Tipos de materiais e curiosidades",
       description: "Descobre como funciona certos processos.",
+      icon: ebookIcon2,
     },
     {
-      title: "Autoestima e conscientização",
+      title: "Autoestima e consciencialização",
       description: "Compreende como o cuidado pessoal pode fortalecê-la.",
+      icon: ebookIcon3,
     },
   ];
 
@@ -664,9 +692,13 @@ function Ebook() {
       </p>
 
       <div className="rs-ebook-grid">
-        {ebooks.map((ebook) => (
+        {ebooks.map((ebook, index) => (
           <div key={ebook.title} className="rs-ebook-card">
-            <div className="rs-ebook-icon">📘</div>
+            <div className="rs-ebook-icon-wrapper">
+              <div className={`rs-ebook-icon ${index < 2 ? 'rs-ebook-icon-large' : ''}`}>
+                <img src={ebook.icon} alt={ebook.title} />
+              </div>
+            </div>
             <h3 className="rs-ebook-title">{ebook.title}</h3>
             <p className="rs-ebook-desc">{ebook.description}</p>
             <a href="#" className="rs-ebook-btn">
@@ -707,11 +739,10 @@ export default function App() {
       <GaleriaUnhas />
       <Servicos />
       <Catalogo />
-      <Horario />
       <Testemunhos />
       <Localizacao />
-      <Contacto />
       <Ebook />
+      <Contacto />
       <Footer />
       <WhatsAppFloat />
     </div>

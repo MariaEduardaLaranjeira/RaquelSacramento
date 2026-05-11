@@ -1,7 +1,7 @@
 
-  # Elaborar site conforme anexo (cópia)
+  # Raquel Sacramento
 
-  This is a code bundle for Elaborar site conforme anexo (cópia). The original project is available at https://www.figma.com/design/Iy3JlOQ0QfzlkY2ofUyIcB/Elaborar-site-conforme-anexo--c%C3%B3pia-.
+  This is a code bundle for Raquel Sacramento. The original project is available at https://www.figma.com/design/Iy3JlOQ0QfzlkY2ofUyIcB/Raquel-Sacramento.
 
   ## Running the code
 
