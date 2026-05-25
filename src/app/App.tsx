@@ -78,6 +78,15 @@ function Hero() {
             ✦ Marcar no WhatsApp
           </a>
           <a href="#servicos" className="rs-btn-outline">Ver Serviços</a>
+          <a
+            href="https://www.canva.com/design/DAHKSGAlh54/0DkCdI615GF0t3BAbcXkNw/edit"
+            className="rs-btn-round"
+            target="_blank"
+            rel="noreferrer"
+            title="Ver Catálogo"
+          >
+            ✦
+          </a>
         </div>
       </div>
     </section>
@@ -191,6 +200,17 @@ function GaleriaUnhas() {
           </div>
         ))}
       </div>
+
+      <a
+        href="https://www.canva.com/design/DAHKSM18Pz0/RUom8WJgoD4AkG3J1agUig/edit"
+        className="rs-btn-round"
+        target="_blank"
+        rel="noreferrer"
+        title="Ver Catálogo Completo de Unhas"
+        style={{ marginTop: '2rem' }}
+      >
+        ✦
+      </a>
     </section>
   );
 }
@@ -541,6 +561,17 @@ function Contacto() {
             FB · @raquelsacramento
           </a>
         </div>
+
+        <a
+          href="https://www.canva.com/design/DAHKSEZ8PIw/rL7B78VNZwLvuC_0xdgS0w/edit"
+          className="rs-btn-round"
+          target="_blank"
+          rel="noreferrer"
+          title="Ver Catálogo Completo"
+          style={{ marginTop: '1.5rem' }}
+        >
+          ✦
+        </a>
       </div>
 
       <form onSubmit={handleSubmit}>
