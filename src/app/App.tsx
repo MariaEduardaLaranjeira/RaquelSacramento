@@ -20,6 +20,7 @@ import imgNail6 from "figma:asset/499e4cc0ef67fdf936a585f00201b36b962ac658.png";
 import ebookIcon1 from "../imports/c5f6ce2cc6cf3df8ebbf91bbd1ae68d1.jpg";
 import ebookIcon2 from "../imports/3aee8726fe9dc0a46117aa41aa095e86.jpg";
 import ebookIcon3 from "../imports/f9d4f54240538afbf0ab46af6f1b3645.jpg";
+import catalogoPdf from "../imports/Mobile_.pdf";
 
 // Nav
 function Nav() {
@@ -563,7 +564,7 @@ function Contacto() {
         </div>
 
         <a
-          href="https://www.canva.com/design/DAHKSEZ8PIw/rL7B78VNZwLvuC_0xdgS0w/edit"
+          href={catalogoPdf}
           className="rs-btn-round"
           target="_blank"
           rel="noreferrer"
