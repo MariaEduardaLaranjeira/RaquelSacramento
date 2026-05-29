@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./raquel.css";
+import { EstrategiaMarketing } from "./components/EstrategiaMarketing";
 
 // Figma real images
 import imgHeroManicure from "../imports/hero-horizontal-new.jpg";
@@ -21,6 +22,9 @@ import ebookIcon1 from "../imports/c5f6ce2cc6cf3df8ebbf91bbd1ae68d1.jpg";
 import ebookIcon2 from "../imports/3aee8726fe9dc0a46117aa41aa095e86.jpg";
 import ebookIcon3 from "../imports/f9d4f54240538afbf0ab46af6f1b3645.jpg";
 import catalogoPdf from "../imports/Mobile_.pdf";
+import campanhaPdf from "../imports/Apresenta__o_campanha_.pdf";
+import campanhaPdf2 from "../imports/Apresenta__o_campanha_-1.pdf";
+import campanhaPdf3 from "../imports/Apresenta__o_campanha___1_.pdf";
 
 // Nav
 function Nav() {
@@ -80,11 +84,9 @@ function Hero() {
           </a>
           <a href="#servicos" className="rs-btn-outline">Ver Serviços</a>
           <a
-            href="https://www.canva.com/design/DAHKSGAlh54/0DkCdI615GF0t3BAbcXkNw/edit"
+            href="#estrategia"
             className="rs-btn-round"
-            target="_blank"
-            rel="noreferrer"
-            title="Ver Catálogo"
+            title="Estratégia de Marketing"
           >
             ✦
           </a>
@@ -203,11 +205,9 @@ function GaleriaUnhas() {
       </div>
 
       <a
-        href="https://www.canva.com/design/DAHKSM18Pz0/RUom8WJgoD4AkG3J1agUig/edit"
+        href="#estrategia"
         className="rs-btn-round"
-        target="_blank"
-        rel="noreferrer"
-        title="Ver Catálogo Completo de Unhas"
+        title="Estratégia de Marketing"
         style={{ marginTop: '2rem' }}
       >
         ✦
@@ -564,11 +564,9 @@ function Contacto() {
         </div>
 
         <a
-          href={catalogoPdf}
+          href="#estrategia"
           className="rs-btn-round"
-          target="_blank"
-          rel="noreferrer"
-          title="Ver Catálogo Completo"
+          title="Estratégia de Marketing"
           style={{ marginTop: '1.5rem' }}
         >
           ✦
@@ -743,6 +741,7 @@ function Ebook() {
   );
 }
 
+
 // WhatsApp float
 function WhatsAppFloat() {
   return (
@@ -761,6 +760,30 @@ function WhatsAppFloat() {
 }
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState(
+    window.location.hash === "#estrategia" ? "estrategia" : "home"
+  );
+
+  // Listen for hash changes
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === "#estrategia") {
+        setCurrentPage("estrategia");
+      } else if (window.location.hash === "" || window.location.hash === "#" || window.location.hash.startsWith("#home")) {
+        setCurrentPage("home");
+      }
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  // Show strategy page
+  if (currentPage === "estrategia") {
+    return <EstrategiaMarketing />;
+  }
+
+  // Show main site
   return (
     <div className="rs-body">
       <Nav />
@@ -780,3 +803,4 @@ export default function App() {
     </div>
   );
 }
+
