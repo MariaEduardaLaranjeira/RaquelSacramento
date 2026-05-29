@@ -4,7 +4,17 @@ import "../estrategia.css";
 export function EstrategiaMarketing() {
   const handleImageClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
-    const clickedArea = e.currentTarget;
+    e.preventDefault();
+
+    // Encontra o elemento da tela do iPhone
+    let targetScreen = e.currentTarget;
+    if (!targetScreen.classList.contains('estrategia-iphone-screen')) {
+      const screen = e.currentTarget.querySelector('.estrategia-iphone-screen') as HTMLElement;
+      if (screen) {
+        targetScreen = screen;
+      }
+    }
+
     const input = document.createElement("input");
     input.type = "file";
     input.accept = "image/*";
@@ -14,20 +24,15 @@ export function EstrategiaMarketing() {
         const reader = new FileReader();
         reader.onload = (loadEvent) => {
           if (loadEvent.target?.result) {
-            const iphoneScreen = clickedArea.querySelector('.estrategia-iphone-screen') as HTMLElement;
-            if (iphoneScreen) {
-              const img = document.createElement('img');
-              img.src = loadEvent.target.result as string;
-              img.alt = 'Imagem carregada';
-              img.style.width = '100%';
-              img.style.height = '100%';
-              img.style.objectFit = 'cover';
-              img.style.cursor = 'pointer';
-              iphoneScreen.innerHTML = '';
-              iphoneScreen.appendChild(img);
-            } else {
-              clickedArea.innerHTML = `<img src="${loadEvent.target.result}" alt="Imagem carregada" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;" />`;
-            }
+            console.log('Image loaded, target screen:', targetScreen);
+            const img = document.createElement('img');
+            img.src = loadEvent.target.result as string;
+            img.alt = 'Imagem carregada';
+            img.style.cssText = 'width: 100%; height: 100%; object-fit: cover; cursor: pointer; display: block;';
+            img.onclick = () => handleImageClick({ currentTarget: targetScreen, stopPropagation: () => {}, preventDefault: () => {} } as any);
+            targetScreen.innerHTML = '';
+            targetScreen.appendChild(img);
+            console.log('Image appended, img element:', img);
           }
         };
         reader.readAsDataURL(file);
@@ -38,7 +43,17 @@ export function EstrategiaMarketing() {
 
   const handleVideoClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
-    const clickedArea = e.currentTarget;
+    e.preventDefault();
+
+    // Encontra o elemento da tela do iPhone
+    let targetScreen = e.currentTarget;
+    if (!targetScreen.classList.contains('estrategia-iphone-screen')) {
+      const screen = e.currentTarget.querySelector('.estrategia-iphone-screen') as HTMLElement;
+      if (screen) {
+        targetScreen = screen;
+      }
+    }
+
     const input = document.createElement("input");
     input.type = "file";
     input.accept = "video/*";
@@ -48,22 +63,17 @@ export function EstrategiaMarketing() {
         const reader = new FileReader();
         reader.onload = (loadEvent) => {
           if (loadEvent.target?.result) {
-            const iphoneScreen = clickedArea.querySelector('.estrategia-iphone-screen') as HTMLElement;
-            if (iphoneScreen) {
-              const video = document.createElement('video');
-              video.controls = true;
-              video.style.width = '100%';
-              video.style.height = '100%';
-              video.style.objectFit = 'cover';
-              const source = document.createElement('source');
-              source.src = loadEvent.target.result as string;
-              source.type = file.type;
-              video.appendChild(source);
-              iphoneScreen.innerHTML = '';
-              iphoneScreen.appendChild(video);
-            } else {
-              clickedArea.innerHTML = `<video controls style="width: 100%; height: 100%; object-fit: cover;"><source src="${loadEvent.target.result}" type="${file.type}">Seu navegador não suporta vídeo.</video>`;
-            }
+            const video = document.createElement('video');
+            video.controls = true;
+            video.style.width = '100%';
+            video.style.height = '100%';
+            video.style.objectFit = 'cover';
+            const source = document.createElement('source');
+            source.src = loadEvent.target.result as string;
+            source.type = file.type;
+            video.appendChild(source);
+            targetScreen.innerHTML = '';
+            targetScreen.appendChild(video);
           }
         };
         reader.readAsDataURL(file);
