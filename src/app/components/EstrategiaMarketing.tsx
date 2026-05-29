@@ -3,6 +3,7 @@ import "../estrategia.css";
 
 export function EstrategiaMarketing() {
   const handleImageClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     const clickedArea = e.currentTarget;
     const input = document.createElement("input");
     input.type = "file";
@@ -13,9 +14,17 @@ export function EstrategiaMarketing() {
         const reader = new FileReader();
         reader.onload = (loadEvent) => {
           if (loadEvent.target?.result) {
-            const iphoneScreen = clickedArea.querySelector('.estrategia-iphone-screen');
+            const iphoneScreen = clickedArea.querySelector('.estrategia-iphone-screen') as HTMLElement;
             if (iphoneScreen) {
-              iphoneScreen.innerHTML = `<img src="${loadEvent.target.result}" alt="Imagem carregada" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;" />`;
+              const img = document.createElement('img');
+              img.src = loadEvent.target.result as string;
+              img.alt = 'Imagem carregada';
+              img.style.width = '100%';
+              img.style.height = '100%';
+              img.style.objectFit = 'cover';
+              img.style.cursor = 'pointer';
+              iphoneScreen.innerHTML = '';
+              iphoneScreen.appendChild(img);
             } else {
               clickedArea.innerHTML = `<img src="${loadEvent.target.result}" alt="Imagem carregada" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;" />`;
             }
@@ -28,6 +37,7 @@ export function EstrategiaMarketing() {
   };
 
   const handleVideoClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
     const clickedArea = e.currentTarget;
     const input = document.createElement("input");
     input.type = "file";
@@ -38,9 +48,19 @@ export function EstrategiaMarketing() {
         const reader = new FileReader();
         reader.onload = (loadEvent) => {
           if (loadEvent.target?.result) {
-            const iphoneScreen = clickedArea.querySelector('.estrategia-iphone-screen');
+            const iphoneScreen = clickedArea.querySelector('.estrategia-iphone-screen') as HTMLElement;
             if (iphoneScreen) {
-              iphoneScreen.innerHTML = `<video controls style="width: 100%; height: 100%; object-fit: cover;"><source src="${loadEvent.target.result}" type="${file.type}">Seu navegador não suporta vídeo.</video>`;
+              const video = document.createElement('video');
+              video.controls = true;
+              video.style.width = '100%';
+              video.style.height = '100%';
+              video.style.objectFit = 'cover';
+              const source = document.createElement('source');
+              source.src = loadEvent.target.result as string;
+              source.type = file.type;
+              video.appendChild(source);
+              iphoneScreen.innerHTML = '';
+              iphoneScreen.appendChild(video);
             } else {
               clickedArea.innerHTML = `<video controls style="width: 100%; height: 100%; object-fit: cover;"><source src="${loadEvent.target.result}" type="${file.type}">Seu navegador não suporta vídeo.</video>`;
             }
@@ -78,7 +98,7 @@ export function EstrategiaMarketing() {
                   <div className="estrategia-iphone-mockup">
                     <div className="estrategia-iphone">
                       <div className="estrategia-iphone-notch"></div>
-                      <div className="estrategia-iphone-screen">
+                      <div className="estrategia-iphone-screen" data-upload-target="image">
                         <div className="estrategia-image-placeholder">
                           <span>📷</span>
                           <p>Clique para adicionar imagem</p>
@@ -100,7 +120,7 @@ export function EstrategiaMarketing() {
                   <div className="estrategia-iphone-mockup">
                     <div className="estrategia-iphone">
                       <div className="estrategia-iphone-notch"></div>
-                      <div className="estrategia-iphone-screen">
+                      <div className="estrategia-iphone-screen" data-upload-target="image">
                         <div className="estrategia-image-placeholder">
                           <span>📷</span>
                           <p>Clique para adicionar imagem</p>
@@ -129,7 +149,7 @@ export function EstrategiaMarketing() {
                     <div className="estrategia-iphone-mockup">
                       <div className="estrategia-iphone">
                         <div className="estrategia-iphone-notch"></div>
-                        <div className="estrategia-iphone-screen">
+                        <div className="estrategia-iphone-screen" data-upload-target="video">
                           <div className="estrategia-video-placeholder">
                             <span>🎥</span>
                             <p>Clique para adicionar vídeo</p>
@@ -142,7 +162,7 @@ export function EstrategiaMarketing() {
                     <div className="estrategia-iphone-mockup">
                       <div className="estrategia-iphone">
                         <div className="estrategia-iphone-notch"></div>
-                        <div className="estrategia-iphone-screen">
+                        <div className="estrategia-iphone-screen" data-upload-target="image">
                           <div className="estrategia-image-placeholder">
                             <span>📷</span>
                             <p>Clique para adicionar imagem</p>
