@@ -1546,7 +1546,6 @@
   .rs-section-title { font-size: 2.2rem; }
 }
 
-
 @media (max-width: 480px) {
   .rs-nail-grid {
     grid-template-columns: repeat(2, 1fr);

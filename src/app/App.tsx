@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./raquel.css";
-import { EstrategiaMarketing } from "./components/EstrategiaMarketing";
 
 // Figma real images
 import imgHeroManicure from "../imports/hero-horizontal-new.jpg";
@@ -21,10 +20,6 @@ import imgNail6 from "figma:asset/499e4cc0ef67fdf936a585f00201b36b962ac658.png";
 import ebookIcon1 from "../imports/c5f6ce2cc6cf3df8ebbf91bbd1ae68d1.jpg";
 import ebookIcon2 from "../imports/3aee8726fe9dc0a46117aa41aa095e86.jpg";
 import ebookIcon3 from "../imports/f9d4f54240538afbf0ab46af6f1b3645.jpg";
-import catalogoPdf from "../imports/Mobile_.pdf";
-import campanhaPdf from "../imports/Apresenta__o_campanha_.pdf";
-import campanhaPdf2 from "../imports/Apresenta__o_campanha_-1.pdf";
-import campanhaPdf3 from "../imports/Apresenta__o_campanha___1_.pdf";
 
 // Nav
 function Nav() {
@@ -84,9 +79,11 @@ function Hero() {
           </a>
           <a href="#servicos" className="rs-btn-outline">Ver Serviços</a>
           <a
-            href="#estrategia"
+            href="https://www.canva.com/design/DAHKSGAlh54/0DkCdI615GF0t3BAbcXkNw/edit"
             className="rs-btn-round"
-            title="Estratégia de Marketing"
+            target="_blank"
+            rel="noreferrer"
+            title="Ver Catálogo"
           >
             ✦
           </a>
@@ -205,9 +202,11 @@ function GaleriaUnhas() {
       </div>
 
       <a
-        href="#estrategia"
+        href="https://www.canva.com/design/DAHKSM18Pz0/RUom8WJgoD4AkG3J1agUig/edit"
         className="rs-btn-round"
-        title="Estratégia de Marketing"
+        target="_blank"
+        rel="noreferrer"
+        title="Ver Catálogo Completo de Unhas"
         style={{ marginTop: '2rem' }}
       >
         ✦
@@ -564,9 +563,11 @@ function Contacto() {
         </div>
 
         <a
-          href="#estrategia"
+          href="https://www.canva.com/design/DAHKSEZ8PIw/rL7B78VNZwLvuC_0xdgS0w/edit"
           className="rs-btn-round"
-          title="Estratégia de Marketing"
+          target="_blank"
+          rel="noreferrer"
+          title="Ver Catálogo Completo"
           style={{ marginTop: '1.5rem' }}
         >
           ✦
@@ -741,7 +742,6 @@ function Ebook() {
   );
 }
 
-
 // WhatsApp float
 function WhatsAppFloat() {
   return (
@@ -760,30 +760,6 @@ function WhatsAppFloat() {
 }
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState(
-    window.location.hash === "#estrategia" ? "estrategia" : "home"
-  );
-
-  // Listen for hash changes
-  useEffect(() => {
-    const handleHashChange = () => {
-      if (window.location.hash === "#estrategia") {
-        setCurrentPage("estrategia");
-      } else if (window.location.hash === "" || window.location.hash === "#" || window.location.hash.startsWith("#home")) {
-        setCurrentPage("home");
-      }
-    };
-
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
-
-  // Show strategy page
-  if (currentPage === "estrategia") {
-    return <EstrategiaMarketing />;
-  }
-
-  // Show main site
   return (
     <div className="rs-body">
       <Nav />
@@ -803,4 +779,3 @@ export default function App() {
     </div>
   );
 }
-
