@@ -13,7 +13,12 @@ export function EstrategiaMarketing() {
         const reader = new FileReader();
         reader.onload = (loadEvent) => {
           if (loadEvent.target?.result) {
-            clickedArea.innerHTML = `<img src="${loadEvent.target.result}" alt="Imagem carregada" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;" />`;
+            const iphoneScreen = clickedArea.querySelector('.estrategia-iphone-screen');
+            if (iphoneScreen) {
+              iphoneScreen.innerHTML = `<img src="${loadEvent.target.result}" alt="Imagem carregada" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;" />`;
+            } else {
+              clickedArea.innerHTML = `<img src="${loadEvent.target.result}" alt="Imagem carregada" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;" />`;
+            }
           }
         };
         reader.readAsDataURL(file);
@@ -33,7 +38,12 @@ export function EstrategiaMarketing() {
         const reader = new FileReader();
         reader.onload = (loadEvent) => {
           if (loadEvent.target?.result) {
-            clickedArea.innerHTML = `<video controls style="width: 100%; height: 100%; object-fit: cover;"><source src="${loadEvent.target.result}" type="${file.type}">Seu navegador não suporta vídeo.</video>`;
+            const iphoneScreen = clickedArea.querySelector('.estrategia-iphone-screen');
+            if (iphoneScreen) {
+              iphoneScreen.innerHTML = `<video controls style="width: 100%; height: 100%; object-fit: cover;"><source src="${loadEvent.target.result}" type="${file.type}">Seu navegador não suporta vídeo.</video>`;
+            } else {
+              clickedArea.innerHTML = `<video controls style="width: 100%; height: 100%; object-fit: cover;"><source src="${loadEvent.target.result}" type="${file.type}">Seu navegador não suporta vídeo.</video>`;
+            }
           }
         };
         reader.readAsDataURL(file);
@@ -65,9 +75,16 @@ export function EstrategiaMarketing() {
                   Clique aqui para editar e adicionar texto...
                 </div>
                 <div className="estrategia-image-area" onClick={handleImageClick}>
-                  <div className="estrategia-image-placeholder">
-                    <span>📷</span>
-                    <p>Clique para adicionar imagem</p>
+                  <div className="estrategia-iphone-mockup">
+                    <div className="estrategia-iphone">
+                      <div className="estrategia-iphone-notch"></div>
+                      <div className="estrategia-iphone-screen">
+                        <div className="estrategia-image-placeholder">
+                          <span>📷</span>
+                          <p>Clique para adicionar imagem</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -80,9 +97,16 @@ export function EstrategiaMarketing() {
                   Clique aqui para editar e adicionar texto...
                 </div>
                 <div className="estrategia-image-area" onClick={handleImageClick}>
-                  <div className="estrategia-image-placeholder">
-                    <span>📷</span>
-                    <p>Clique para adicionar imagem</p>
+                  <div className="estrategia-iphone-mockup">
+                    <div className="estrategia-iphone">
+                      <div className="estrategia-iphone-notch"></div>
+                      <div className="estrategia-iphone-screen">
+                        <div className="estrategia-image-placeholder">
+                          <span>📷</span>
+                          <p>Clique para adicionar imagem</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -102,15 +126,29 @@ export function EstrategiaMarketing() {
                 </div>
                 <div className="estrategia-media-column">
                   <div className="estrategia-video-area" onClick={handleVideoClick}>
-                    <div className="estrategia-video-placeholder">
-                      <span>🎥</span>
-                      <p>Clique para adicionar vídeo</p>
+                    <div className="estrategia-iphone-mockup">
+                      <div className="estrategia-iphone">
+                        <div className="estrategia-iphone-notch"></div>
+                        <div className="estrategia-iphone-screen">
+                          <div className="estrategia-video-placeholder">
+                            <span>🎥</span>
+                            <p>Clique para adicionar vídeo</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="estrategia-image-area" onClick={handleImageClick}>
-                    <div className="estrategia-image-placeholder">
-                      <span>📷</span>
-                      <p>Clique para adicionar imagem</p>
+                    <div className="estrategia-iphone-mockup">
+                      <div className="estrategia-iphone">
+                        <div className="estrategia-iphone-notch"></div>
+                        <div className="estrategia-iphone-screen">
+                          <div className="estrategia-image-placeholder">
+                            <span>📷</span>
+                            <p>Clique para adicionar imagem</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
